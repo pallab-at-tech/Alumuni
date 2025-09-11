@@ -68,14 +68,14 @@ const Directory = () => {
 
             {/* Sidebar Filter */}
             <aside className="bg-white h-fit p-6 shadow-md sticky top-0">
-                <h2 className="text-lg font-semibold mb-4">Filters</h2>
+                <h2 className="text-lg font-semibold mb-4 text-indigo-800">Filters</h2>
 
                 {/* Name Search */}
                 <div className="mb-6">
                     <input
                         type="text"
                         placeholder="Search by name..."
-                        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="w-full px-3 py-2 border-1 border-gray-300 focus:border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300"
                     />
                 </div>
 
@@ -85,7 +85,7 @@ const Directory = () => {
                         onClick={() => toggleSection("batch")}
                         className="w-full flex justify-between items-center py-2 text-left"
                     >
-                        <span className="font-medium text-gray-700">Batch / Year</span>
+                        <span className="font-medium text-indigo-700">Batch / Year</span>
                         {openSections.batch ? (
                             <FaChevronUp className="w-3 h-3 text-gray-500" />
                         ) : (
@@ -93,7 +93,7 @@ const Directory = () => {
                         )}
                     </button>
                     {openSections.batch && (
-                        <select className="w-full mt-2 px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <select className="w-full mt-2 px-3 py-2 text-sm border-1 border-gray-400 rounded-lg focus:outline-none">
                             <option value="">All</option>
                             <option>Class of 2010</option>
                             <option>Class of 2015</option>
@@ -108,7 +108,7 @@ const Directory = () => {
                         onClick={() => toggleSection("course")}
                         className="w-full flex justify-between items-center py-2 text-left"
                     >
-                        <span className="font-medium text-gray-700">Course</span>
+                        <span className="font-medium text-indigo-700">Course</span>
                         {openSections.course ? (
                             <FaChevronUp className="w-3 h-3 text-gray-500" />
                         ) : (
@@ -116,7 +116,7 @@ const Directory = () => {
                         )}
                     </button>
                     {openSections.course && (
-                        <div className="mt-2 space-y-2">
+                        <div className="mt-2 space-y-2 ">
                             <label className="flex items-center gap-2">
                                 <input type="checkbox" className="rounded text-indigo-600" /> B.Tech
                             </label>
@@ -136,7 +136,7 @@ const Directory = () => {
                         onClick={() => toggleSection("dept")}
                         className="w-full flex justify-between items-center py-2 text-left"
                     >
-                        <span className="font-medium text-gray-700">Department</span>
+                        <span className="font-medium text-indigo-700">Department</span>
                         {openSections.dept ? (
                             <FaChevronUp className="w-3 h-3 text-gray-500" />
                         ) : (
@@ -164,7 +164,7 @@ const Directory = () => {
                         onClick={() => toggleSection("company")}
                         className="w-full flex justify-between items-center py-2 text-left"
                     >
-                        <span className="font-medium text-gray-700">Company</span>
+                        <span className="font-medium text-indigo-700">Company</span>
                         {openSections.company ? (
                             <FaChevronUp className="w-3 h-3 text-gray-500" />
                         ) : (
@@ -175,7 +175,7 @@ const Directory = () => {
                         <input
                             type="text"
                             placeholder="e.g. Google"
-                            className="w-full mt-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="w-full mt-2 px-3 py-2 border-1 border-gray-300 focus:border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300"
                         />
                     )}
                 </div>
@@ -186,7 +186,7 @@ const Directory = () => {
                         onClick={() => toggleSection("location")}
                         className="w-full flex justify-between items-center py-2 text-left"
                     >
-                        <span className="font-medium text-gray-700">Location</span>
+                        <span className="font-medium text-indigo-700">Location</span>
                         {openSections.location ? (
                             <FaChevronUp className="w-3 h-3 text-gray-500" />
                         ) : (
@@ -197,7 +197,7 @@ const Directory = () => {
                         <input
                             type="text"
                             placeholder="e.g. Bangalore"
-                            className="w-full mt-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="w-full mt-2 px-3 py-2 border-1 border-gray-300 focus:border-indigo-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300"
                         />
                     )}
                 </div>
@@ -226,7 +226,7 @@ const Directory = () => {
 
                                 <p className="text-sm">
                                     Result Found:{" "}
-                                    <span className="px-2 py-0.5 bg-yellow-500 text-gray-900 rounded-md text-xs font-medium">
+                                    <span className="px-2 py-0.5 bg-indigo-400 text-gray-900 rounded-md text-xs font-medium">
                                         {v.data.length}
                                     </span>
                                 </p>

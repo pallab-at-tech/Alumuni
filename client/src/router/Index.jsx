@@ -3,6 +3,7 @@ import App from '../App'
 import Event from '../page/Event'
 import Directory from '../page/Directory'
 import Home from '../page/Home'
+import Donations from '../page/Donations'
 
 
 const route = createBrowserRouter([
@@ -21,6 +22,10 @@ const route = createBrowserRouter([
             {
                 path: "/directory",
                 element: <Directory />
+            },
+            {
+                path : "/donations",
+                element : <Donations/>
             }
         ]
     },

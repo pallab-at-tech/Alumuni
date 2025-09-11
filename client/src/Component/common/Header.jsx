@@ -8,12 +8,13 @@ const Header = () => {
                 <div className="flex justify-between items-center h-16">
                     <Link to={"/"} className="text-2xl font-bold text-indigo-600">AlumniHub</Link>
                     <nav className="flex items-center gap-6">
+                        <Link>About</Link>
                         <Link to={"/"} className="text-gray-700 hover:text-indigo-600">Home</Link>
                         <Link to={"/directory"} className="text-gray-700 hover:text-indigo-600">Directory</Link>
                         <Link to={"/event"} className="text-gray-700 hover:text-indigo-600">Events</Link>
-                        <a href="#" className="text-gray-700 hover:text-indigo-600">Donations</a>
-                        <a href="#" className="text-gray-700 hover:text-indigo-600">Login</a>
-                        <a href="#" className="text-gray-700 hover:text-indigo-600">Register</a>
+                        <Link to={"/donations"} className="text-gray-700 hover:text-indigo-600">Donations</Link>
+                        {/* <a href="#" className="text-gray-700 hover:text-indigo-600">Login</a>
+                        <a href="#" className="text-gray-700 hover:text-indigo-600">Register</a> */}
                     </nav>
                 </div>
             </div>
