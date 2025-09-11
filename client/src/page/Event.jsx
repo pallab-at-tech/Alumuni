@@ -2,7 +2,7 @@ import React from 'react'
 
 const Event = () => {
   return (
-    <section>
+    <section className='min-h-[calc(100vh-64px)]'>
         Event
     </section>
   )
