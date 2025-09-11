@@ -64,10 +64,10 @@ const Directory = () => {
     };
 
     return (
-        <section className="grid sm:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr] gap-6 pt-1 pl-2 min-h-[calc(100vh-64px)]">
+        <section className="grid sm:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr] gap-6 pt-1 pl-2 min-h-[calc(100vh-416px)]">
 
             {/* Sidebar Filter */}
-            <aside className="bg-white h-fit p-6 shadow-md sticky top-[64px]">
+            <aside className="bg-white h-fit p-6 shadow-md sticky top-0">
                 <h2 className="text-lg font-semibold mb-4">Filters</h2>
 
                 {/* Name Search */}
