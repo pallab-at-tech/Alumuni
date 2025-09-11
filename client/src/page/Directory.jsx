@@ -64,7 +64,7 @@ const Directory = () => {
     };
 
     return (
-        <section className="grid grid-cols-[300px_1fr] gap-6 pt-1 pl-2 min-h-[calc(100vh-64px)]">
+        <section className="grid sm:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr] gap-6 pt-1 pl-2 min-h-[calc(100vh-64px)]">
 
             {/* Sidebar Filter */}
             <aside className="bg-white h-fit p-6 shadow-md sticky top-[64px]">
@@ -209,7 +209,7 @@ const Directory = () => {
             </aside>
 
             {/* Results */}
-            <div className="px-4 py-6 grid grid-cols-3 h-[220px] gap-6">
+            <div className="px-4 py-6 grid sm:grid-cols-2 sm:h-[450px] lg:grid-cols-3 lg:h-[250px] gap-6">
                 {alumniData.map((v, i) => (
                     <div
                         key={i}
