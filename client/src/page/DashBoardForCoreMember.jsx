@@ -267,10 +267,12 @@ const DashBoardForCoreMember = () => {
         <Header/>
             <div className="flex h-[calc(100vh-64px)] bg-gray-100">
                 <aside className={`bg-gray-800 text-white w-64 fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 transition-transform duration-300 ease-in-out z-30 flex flex-col`}>
+
                     <div className="p-4 flex justify-between items-center border-b border-gray-700">
                         <h1 className="text-xl font-bold">Core Portal</h1>
                         <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-white"><XIcon className="h-6 w-6" /></button>
                     </div>
+                    
                     <nav className="p-4 space-y-2 flex-grow">
                         <NavLink view="dashboard"  icon={<HomeIcon className="h-5 w-5" />} >Dashboard & Profile</NavLink>
                         <NavLink view="connections" icon={<LinkIcon className="h-5 w-5" />} >Connections</NavLink>
@@ -278,6 +280,7 @@ const DashBoardForCoreMember = () => {
                         <NavLink view="donations" icon={<HeartIcon className="h-5 w-5" />} >Donation History</NavLink>
                         <NavLink view="mentorship" icon={<BriefcaseIcon className="h-5 w-5" />} >My Mentorship</NavLink>
                     </nav>
+                    
                     <div className="p-4 border-t border-gray-700">
                         <button
                             onClick={() => alert('Logged out!')}

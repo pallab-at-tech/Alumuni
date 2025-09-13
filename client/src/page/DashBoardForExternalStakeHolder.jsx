@@ -36,6 +36,7 @@ const CalendarIcon = (props) => (<svg {...props} xmlns="http://www.w3.org/2000/s
 const HeartIcon = (props) => (<svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>);
 const MenuIcon = (props) => (<svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>);
 const XIcon = (props) => (<svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>);
+const LogOutIcon = (props) => (<svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" x2="9" y1="12" y2="12" /></svg>);
 
 // --- VIEWS / SECTIONS ---
 
@@ -190,7 +191,7 @@ const DashBoardForExternalStakeHolder = () => {
 
     const NavLink = ({ view, icon, children }) => (
         <button onClick={() => { setActiveView(view); setSidebarOpen(false); }}
-            className={`w-full flex items-center p-3 rounded-lg transition-colors ${activeView === view ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>
+            className={`w-full flex items-center cursor-pointer p-3 rounded-lg transition-colors ${activeView === view ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>
             {icon}
             <span className="ml-4">{children}</span>
         </button>
@@ -200,18 +201,31 @@ const DashBoardForExternalStakeHolder = () => {
         <>
             <Header />
             <div className="flex h-[calc(100vh-64px)] bg-gray-100 font-sans">
-                <aside className={`bg-gray-800 text-white w-64 fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 transition-transform duration-300 ease-in-out z-30`}>
+                <aside className={`bg-gray-800 text-white w-64 fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 transition-transform duration-300 ease-in-out z-30 flex flex-col`}>
+
                     <div className="p-4 flex justify-between items-center border-b border-gray-700">
                         <h1 className="text-xl font-bold">Recruiter Panel</h1>
                         <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-white"><XIcon className="h-6 w-6" /></button>
                     </div>
-                    <nav className="p-4 space-y-2">
+
+                    <nav className="p-4 space-y-2 flex-grow">
                         <NavLink view="home" icon={<HomeIcon className="h-5 w-5" />}>Dashboard</NavLink>
                         <NavLink view="jobs" icon={<PlusCircleIcon className="h-5 w-5" />}>Manage Jobs</NavLink>
                         <NavLink view="search" icon={<SearchIcon className="h-5 w-5" />}>Search Alumni</NavLink>
                         <NavLink view="events" icon={<CalendarIcon className="h-5 w-5" />}>Career Events</NavLink>
                         <NavLink view="sponsorships" icon={<HeartIcon className="h-5 w-5" />}>Sponsorships</NavLink>
                     </nav>
+
+                    <div className="p-4 border-t border-gray-700">
+                        <button
+                            onClick={() => alert('Logged out!')}
+                            className="w-full flex items-center cursor-pointer p-3 rounded-lg text-gray-300 hover:bg-red-600 hover:text-white transition-colors"
+                        >
+                            <LogOutIcon className="h-5 w-5" />
+                            <span className="ml-4">Logout</span>
+                        </button>
+                    </div>
+
                 </aside>
 
                 <div className="flex-1 flex flex-col overflow-hidden">

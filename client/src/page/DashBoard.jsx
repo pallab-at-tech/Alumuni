@@ -79,6 +79,8 @@ const XIcon = (props) => (
   </svg>
 );
 
+const LogOutIcon = (props) => (<svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" x2="9" y1="12" y2="12" /></svg>);
+
 
 // --- Reusable Components ---
 const StatCard = ({ title, value, icon, color }) => (
@@ -408,7 +410,7 @@ const App = () => {
         setActiveView(view)
         setSidebarOpen(false)
       }}
-      className={`w-full flex items-center p-3 rounded-lg transition-colors ${activeView === view ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
+      className={`w-full flex items-center p-3 rounded-lg cursor-pointer transition-colors ${activeView === view ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
     >
       {icon}
       <span className="ml-4">{children}</span>
@@ -417,17 +419,19 @@ const App = () => {
 
   return (
     <>
-    <Header/>
+      <Header />
       <div className="flex h-[calc(100vh-64px)] bg-gray-100">
         {/* Sidebar */}
-        <aside className={`bg-gray-800 text-white w-64 fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 transition-transform duration-300 ease-in-out z-30`}>
+        <aside className={`bg-gray-800 text-white w-64 fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 transition-transform duration-300 ease-in-out z-30 flex flex-col`}>
+
           <div className="p-4 flex justify-between items-center">
             <h1 className="text-2xl font-bold">Faculty Panel</h1>
             <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-white">
               <XIcon className="h-6 w-6" />
             </button>
           </div>
-          <nav className="p-4 space-y-2">
+
+          <nav className="p-4 space-y-2 flex-grow">
             <NavLink view="dashboard" icon={<HomeIcon className="h-5 w-5" />}>Dashboard</NavLink>
             <NavLink view="manage-alumni" icon={<UsersIcon className="h-5 w-5" />}>Manage Alumni</NavLink>
             <NavLink view="moderate-events" icon={<CalendarIcon className="h-5 w-5" />}>Moderate Events</NavLink>
@@ -435,6 +439,16 @@ const App = () => {
             <NavLink view="mentorship" icon={<UserCheckIcon className="h-5 w-5" />}>Mentorship</NavLink>
             <NavLink view="reports" icon={<BarChartIcon className="h-5 w-5" />}>Reports</NavLink>
           </nav>
+
+          <div className="p-4 border-t border-gray-700 ">
+            <button
+              onClick={() => alert('Logged out!')}
+              className="w-full flex items-center cursor-pointer p-3 rounded-lg text-gray-300 hover:bg-red-600 hover:text-white transition-colors"
+            >
+              <LogOutIcon className="h-5 w-5" />
+              <span className="ml-4">Logout</span>
+            </button>
+          </div>
         </aside>
 
         {/* Main Content */}

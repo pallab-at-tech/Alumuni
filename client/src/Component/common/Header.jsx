@@ -33,7 +33,7 @@ const Header = () => {
 
                     {/* Navbar */}
                     <nav className="flex items-center gap-6">
-                        <Link to="/about" className="text-gray-700 hover:text-indigo-600">About</Link>
+                        {/* <Link to="/about" className="text-gray-700 hover:text-indigo-600">About</Link> */}
                         <Link to="/" className="text-gray-700 hover:text-indigo-600">Home</Link>
                         <Link to="/directory" className="text-gray-700 hover:text-indigo-600">Directory</Link>
                         <Link to="/events" className="text-gray-700 hover:text-indigo-600">Events</Link>
@@ -83,7 +83,7 @@ const Header = () => {
                                 <FiGrid /> <span className={`${careerOpen ? "rotate-x-180" : "rotate-0"} transition-transform duration-300`}>▾</span>
                             </button>
                             {dashboardOption && (
-                                <div className="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md z-50">
+                                <div className="absolute right-0  mt-2 w-40 bg-white shadow-md rounded-md z-50">
                                     <Link onClick={() => setDashboardOption(false)}
                                         to="/core-member"
                                         className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
