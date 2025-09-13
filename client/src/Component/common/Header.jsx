@@ -6,6 +6,9 @@ const Header = () => {
     const [careerOpen, setCareerOpen] = useState(false);
     const dropdownRef = useRef(null);
 
+    const [dashboardOption, setDashboardOption] = useState(false)
+    const dashboardRef = useRef(null)
+
     // Close dropdown if clicked outside
     useEffect(() => {
         function handleClickOutside(e) {
@@ -45,13 +48,13 @@ const Header = () => {
                             </button>
                             {careerOpen && (
                                 <div className="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md z-50">
-                                    <Link onClick={()=>setCareerOpen(false)}
+                                    <Link onClick={() => setCareerOpen(false)}
                                         to="/jobs"
                                         className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
                                     >
                                         Jobs
                                     </Link>
-                                    <Link onClick={()=>setCareerOpen(false)}
+                                    <Link onClick={() => setCareerOpen(false)}
                                         to="/mentorship"
                                         className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
                                     >
@@ -67,9 +70,51 @@ const Header = () => {
 
 
                         {/* Dashboard Icon */}
-                        <Link to="/dashboard" className="text-gray-700 hover:text-indigo-600 text-xl">
+                        {/* <Link to="/dashboard" className="text-gray-700 hover:text-indigo-600 text-xl">
                             <FiGrid />
-                        </Link>
+                        </Link> */}
+
+                        {/* Dashboard Dropdown */}
+                        <div className="relative" ref={dashboardRef}>
+                            <button
+                                onClick={() => setDashboardOption((prev) => !prev)}
+                                className="text-gray-700 hover:text-indigo-600 flex items-center gap-1 cursor-pointer"
+                            >
+                                <FiGrid /> <span className={`${careerOpen ? "rotate-x-180" : "rotate-0"} transition-transform duration-300`}>▾</span>
+                            </button>
+                            {dashboardOption && (
+                                <div className="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md z-50">
+                                    <Link onClick={() => setDashboardOption(false)}
+                                        to="/core-member"
+                                        className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
+                                    >
+                                        Core Member
+                                    </Link>
+                                    
+                                    <Link onClick={() => setDashboardOption(false)}
+                                        to="/moderator"
+                                        className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
+                                    >
+                                        Moderator
+                                    </Link>
+
+                                    <Link onClick={() => setDashboardOption(false)}
+                                        to="/head-authority"
+                                        className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
+                                    >
+                                        Head Authority
+                                    </Link>
+                                    
+                                    <Link onClick={() => setDashboardOption(false)}
+                                        to="/stake-holder"
+                                        className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
+                                    >
+                                        Stake holder
+                                    </Link>
+                                    
+                                </div>
+                            )}
+                        </div>
 
                         {/* Notification Bell */}
                         <button className="relative text-gray-700 hover:text-indigo-600 text-xl cursor-pointer">

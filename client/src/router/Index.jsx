@@ -10,6 +10,9 @@ import Shop from '../page/Shop'
 import Contact from '../page/Contact'
 import About from '../page/About'
 import DashBoard from '../page/DashBoard'
+import DashBoardForCoreMember from '../page/DashBoardForCoreMember'
+import DashBoardForHeadAuthority from '../page/DashBoardForHeadAuthority'
+import DashBoardForExternalStakeHolder from '../page/DashBoardForExternalStakeHolder'
 
 
 const route = createBrowserRouter([
@@ -52,12 +55,24 @@ const route = createBrowserRouter([
             {
                 path: "/about",
                 element: <About />
-            }
+            },
         ]
     },
     {
-        path: "/dashboard",
+        path: "/moderator",
         element: <DashBoard />
+    },
+    {
+        path : "/core-member",
+        element : <DashBoardForCoreMember/>
+    },
+    {
+        path : "/head-authority",
+        element : <DashBoardForHeadAuthority/>
+    },
+    {
+        path : "/stake-holder",
+        element : <DashBoardForExternalStakeHolder/>
     }
 
 ])

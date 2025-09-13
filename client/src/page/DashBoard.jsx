@@ -418,7 +418,7 @@ const App = () => {
   return (
     <>
     <Header/>
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex h-[calc(100vh-64px)] bg-gray-100">
         {/* Sidebar */}
         <aside className={`bg-gray-800 text-white w-64 fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:relative lg:translate-x-0 transition-transform duration-300 ease-in-out z-30`}>
           <div className="p-4 flex justify-between items-center">
