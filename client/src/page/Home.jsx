@@ -17,14 +17,14 @@ const Home = () => {
             pos: "[object-position:100%_45%]",
             text: "Stay connected with your batchmates and professors.",
             text_pos: "top-[150px] bottom-0 left-0 right-0",
-            route: ""
+            route: "/directory"
         },
         {
             img: "https://image.lexica.art/full_webp/5e4d95c3-cfb9-4113-8b54-f8d7731454b3",
             pos: "[object-position:100%_30%]",
             text: "Discover mentorship, career opportunities",
             text_pos: "top-0 bottom-0 left-0 right-0",
-            route: ""
+            route: "/mentorship"
         },
         {
             img: "https://image.lexica.art/full_webp/59722cff-6004-4d68-a5a8-2fa34fcee43b",

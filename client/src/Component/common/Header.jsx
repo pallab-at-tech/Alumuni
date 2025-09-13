@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiBell, FiGrid } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     const [careerOpen, setCareerOpen] = useState(false);
@@ -34,9 +35,32 @@ const Header = () => {
                     {/* Navbar */}
                     <nav className="flex items-center gap-6">
                         {/* <Link to="/about" className="text-gray-700 hover:text-indigo-600">About</Link> */}
+
                         <Link to="/" className="text-gray-700 hover:text-indigo-600">Home</Link>
-                        <Link to="/directory" className="text-gray-700 hover:text-indigo-600">Directory</Link>
-                        <Link to="/events" className="text-gray-700 hover:text-indigo-600">Events</Link>
+
+                        <NavLink
+                            to="/directory"
+                            className={({ isActive }) =>
+                                `px-2.5 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive
+                                    ? "bg-indigo-100 text-indigo-700 font-semibold"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+                                }`
+                            }
+                        >
+                            Directory
+                        </NavLink>
+
+                        <NavLink
+                            to="/events"
+                            className={({ isActive }) =>
+                                `px-2.5 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive
+                                    ? "bg-indigo-100 text-indigo-700 font-semibold"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+                                }`
+                            }
+                        >
+                            Events
+                        </NavLink>
 
                         {/* Career Dropdown (Click-based, no flicker) */}
                         <div className="relative" ref={dropdownRef}>
@@ -48,6 +72,7 @@ const Header = () => {
                             </button>
                             {careerOpen && (
                                 <div className="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md z-50">
+                                    
                                     <Link onClick={() => setCareerOpen(false)}
                                         to="/jobs"
                                         className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
@@ -64,9 +89,42 @@ const Header = () => {
                             )}
                         </div>
 
-                        <Link to="/donations" className="text-gray-700 hover:text-indigo-600">Donations</Link>
-                        <Link to="/shop" className="text-gray-700 hover:text-indigo-600">Shop</Link>
-                        <Link to="/contact" className="text-gray-700 hover:text-indigo-600">Contact</Link>
+                        <NavLink
+                            to="/donations"
+                            className={({ isActive }) =>
+                                `px-2.5 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive
+                                    ? "bg-indigo-100 text-indigo-700 font-semibold"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+                                }`
+                            }
+                        >
+                            Donations
+                        </NavLink>
+
+                        <NavLink
+                            to="/shop"
+                            className={({ isActive }) =>
+                                `px-2.5 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive
+                                    ? "bg-indigo-100 text-indigo-700 font-semibold"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+                                }`
+                            }
+                        >
+                            Shop
+                        </NavLink>
+
+                        <NavLink
+                            to="/contact"
+                            className={({ isActive }) =>
+                                `px-2.5 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive
+                                    ? "bg-indigo-100 text-indigo-700 font-semibold"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-indigo-600"
+                                }`
+                            }
+                        >
+                            Contact
+                        </NavLink>
+
 
 
                         {/* Dashboard Icon */}
@@ -90,7 +148,7 @@ const Header = () => {
                                     >
                                         Core Member
                                     </Link>
-                                    
+
                                     <Link onClick={() => setDashboardOption(false)}
                                         to="/moderator"
                                         className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
@@ -104,14 +162,14 @@ const Header = () => {
                                     >
                                         Head Authority
                                     </Link>
-                                    
+
                                     <Link onClick={() => setDashboardOption(false)}
                                         to="/stake-holder"
                                         className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
                                     >
                                         Stake holder
                                     </Link>
-                                    
+
                                 </div>
                             )}
                         </div>
