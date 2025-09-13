@@ -30,35 +30,35 @@ const route = createBrowserRouter([
                 element: <Directory />
             },
             {
-                path : "/donations",
-                element : <Donations/>
+                path: "/donations",
+                element: <Donations />
             },
             {
-                path : "/jobs",
-                element : <JobPortal/>
+                path: "/jobs",
+                element: <JobPortal />
             },
             {
-                path : "/mentorship",
-                element : <Mentorship/>
+                path: "/mentorship",
+                element: <Mentorship />
             },
             {
-                path : "/shop",
-                element : <Shop/>
+                path: "/shop",
+                element: <Shop />
             },
             {
-                path : "/contact",
-                element : <Contact/>
+                path: "/contact",
+                element: <Contact />
             },
             {
-                path : "/about",
-                element : <About/>
-            },
-            {
-                path : "/dashboard",
-                element : <DashBoard/>
+                path: "/about",
+                element: <About />
             }
         ]
     },
+    {
+        path: "/dashboard",
+        element: <DashBoard />
+    }
 
 ])
 
