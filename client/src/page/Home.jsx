@@ -31,7 +31,7 @@ const Home = () => {
             pos: "[object-position:100%_50%]",
             text: "Get all details of events",
             text_pos: "top-12 left-14 bottom-0",
-            route: "/event"
+            route: "/events"
         }
     ];
 
