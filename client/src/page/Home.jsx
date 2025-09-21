@@ -146,9 +146,10 @@ const Home = () => {
                             Search and connect with your classmates, batchmates, and professors to
                             stay in touch and grow your network.
                         </p>
-                        <button className="bg-indigo-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-indigo-700 transition">
+
+                        <Link to={"/directory"} className="bg-indigo-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-indigo-700 transition">
                             Start Searching
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Image */}
@@ -184,9 +185,9 @@ const Home = () => {
                             single Smart ID. Stay connected and make the most of your alumni
                             privileges.
                         </p>
-                        <button className="bg-indigo-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-indigo-700 transition">
+                        <Link to={"/smartId"} className="bg-indigo-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-indigo-700 transition">
                             Get My ID
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -209,12 +210,11 @@ const Home = () => {
                             <p className="text-gray-700 text-base mb-4">
                                 {events[0].description}
                             </p>
-                            <Link
-                                to={events[0].link}
-                                className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700 transition"
+                            <button
+                                className="inline-block cursor-pointer bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700 transition"
                             >
                                 View Details
-                            </Link>
+                            </button>
                         </div>
                     </div>
 
@@ -231,12 +231,11 @@ const Home = () => {
                             <p className="text-gray-700 text-sm mb-4">
                                 {events[1].description}
                             </p>
-                            <Link
-                                to={events[1].link}
-                                className="inline-block bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700 transition"
+                            <button
+                                className="inline-block cursor-pointer bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700 transition"
                             >
                                 View Details
-                            </Link>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -245,12 +244,12 @@ const Home = () => {
             {/* Mentor Section and Alumni Testimonials section*/}
             <div className="w-full">
                 {/* Meet Our Mentors Section */}
-                <div className="bg-gradient-to-r from-amber-600 to-amber-800 py-16 px-6 md:px-14">
+                <div className="bg-gradient-to-r from-amber-600 to-amber-800 py-16 px-6 xl:px-14">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 flex items-center justify-center gap-3">
                         👨‍🏫 Meet Our Mentors
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
                         {/* Mentor 1 */}
                         <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300">
                             <img
@@ -296,12 +295,12 @@ const Home = () => {
                 </div>
 
                 {/* Alumni Testimonials Section */}
-                <div className="bg-gray-50 py-16 px-6 md:px-14">
+                <div className="bg-gray-50 py-16 px-6 xl:px-14">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 flex items-center justify-center gap-3">
                         💬 Alumni Testimonials
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
                         {/* Testimonial Card 1 */}
                         <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition relative">
                             <span className="absolute top-4 left-4 text-5xl text-amber-500 opacity-20">“</span>

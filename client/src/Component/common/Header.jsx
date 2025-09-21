@@ -21,6 +21,16 @@ const Header = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    useEffect(() => {
+        function handleClickOutside(e) {
+            if (dashboardRef.current && !dashboardRef.current.contains(e.target)) {
+                setDashboardOption(false)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [])
+
     return (
         <header className="bg-white shadow-sm">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,11 +39,11 @@ const Header = () => {
 
                     {/* Logo */}
                     <Link to="/" className="text-2xl font-bold text-indigo-600">
-                        AlumniHub
+                        SangJog
                     </Link>
 
                     {/* Navbar */}
-                    <nav className="flex items-center gap-6">
+                    <nav className="flex items-center xl:gap-6 gap-2">
                         {/* <Link to="/about" className="text-gray-700 hover:text-indigo-600">About</Link> */}
 
                         <Link to="/" className="text-gray-700 hover:text-indigo-600">Home</Link>
@@ -72,7 +82,7 @@ const Header = () => {
                             </button>
                             {careerOpen && (
                                 <div className="absolute left-0 mt-2 w-40 bg-white shadow-md rounded-md z-50">
-                                    
+
                                     <Link onClick={() => setCareerOpen(false)}
                                         to="/jobs"
                                         className="block px-4 py-2 text-gray-700 hover:bg-indigo-50"
@@ -175,7 +185,7 @@ const Header = () => {
                         </div>
 
                         {/* Notification Bell */}
-                        <button className="relative text-gray-700 hover:text-indigo-600 text-xl cursor-pointer">
+                        <button className="relative text-gray-700 hover:text-indigo-600 text-xl cursor-pointer hidden xl:block">
                             <FiBell />
                             <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" />
                         </button>

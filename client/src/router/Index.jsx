@@ -13,6 +13,7 @@ import DashBoard from '../page/DashBoard'
 import DashBoardForCoreMember from '../page/DashBoardForCoreMember'
 import DashBoardForHeadAuthority from '../page/DashBoardForHeadAuthority'
 import DashBoardForExternalStakeHolder from '../page/DashBoardForExternalStakeHolder'
+import SmartId from '../page/SmartId'
 
 
 const route = createBrowserRouter([
@@ -56,6 +57,10 @@ const route = createBrowserRouter([
                 path: "/about",
                 element: <About />
             },
+            {
+                path : "/smartId",
+                element : <SmartId/>
+            }
         ]
     },
     {
